@@ -1,0 +1,26 @@
+{
+  "name": "webpack-carding",
+  "version": "1.0.0",
+  "description": "webpack 疏理",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webapck"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flftfqwxf/webpack.git"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "leixianhua",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flftfqwxf/webpack/issues"
+  },
+  "homepage": "https://github.com/flftfqwxf/webpack#readme",
+  "devDependencies": {
+    "webpack": "^1.13.1"
+  }
+}
