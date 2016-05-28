@@ -6,8 +6,8 @@ m('b');
 if (document.querySelector('a').length) {
     
   require.ensure([],()=>{
-      const c=require('./c');
-      c();
+      const d=require('./d');
+      d();
 
   })
 }
