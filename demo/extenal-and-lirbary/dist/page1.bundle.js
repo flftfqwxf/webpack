@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("add"));
+		module.exports = factory(require("add"), require("DEL"), require("jQuery"));
 	else if(typeof define === 'function' && define.amd)
-		define(["add"], factory);
-	else {
-		var a = typeof exports === 'object' ? factory(require("add")) : factory(root["add"]);
-		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
-	}
-})(this, function(__WEBPACK_EXTERNAL_MODULE_2__) {
+		define(["add", "DEL", "jQuery"], factory);
+	else if(typeof exports === 'object')
+		exports["myLibray"] = factory(require("add"), require("DEL"), require("jQuery"));
+	else
+		root["myLibray"] = factory(root["add"], root["DEL"], root["jQuery"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -57,29 +57,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Created by flftfqwxf on 16/5/27.
 	 */
-	var m=__webpack_require__(1);
-	m('b');
-	if (document.querySelector('a').length) {
-	    
-	  !/* require.ensure */(()=>{
-	      const c=__webpack_require__(3);
-	      c();
 
-	  }(__webpack_require__))
+	var add = __webpack_require__(1);
+	//var subtract = require("subtract");
+	add();
+	var del=__webpack_require__(2);
+	del()
+	var jQuery=__webpack_require__(3)
+
+	module.exports={
+	    add:add,
+	    del:del,
+	    jq:jQuery
 	}
 
 /***/ },
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	/**
-	 * Created by flftfqwxf on 16/5/27.
-	 */
-
-	var add = __webpack_require__(2);
-	//var subtract = require("subtract");
-
-	exports.exampleValue = add;
+	module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 
 /***/ },
 /* 2 */
@@ -89,13 +85,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 3 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	/**
-	 * Created by flftfqwxf on 16/5/27.
-	 */
-	var m=__webpack_require__(1);
-	console.log(m('d'))
+	module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
 
 /***/ }
 /******/ ])
