@@ -61,14 +61,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	var add = __webpack_require__(1);
 	//var subtract = require("subtract");
 	add();
-	var del=__webpack_require__(2);
+	var del = __webpack_require__(2);
 	del()
-	var jQuery=__webpack_require__(3)
-
-	module.exports={
-	    add:add,
-	    del:del,
-	    jq:jQuery
+	var jQuery = __webpack_require__(3)
+	module.exports = {
+	    add: add,
+	    del: del,
+	    jq: jQuery
 	}
 
 /***/ },

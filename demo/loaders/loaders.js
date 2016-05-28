@@ -33,7 +33,37 @@ module.exports = {
         // filename: "[name].[hash].bundle.js",
         chunkFilename: "[chunk].chunk.js"
     },
+    loaders: [
+        {
+            // "test" is commonly used to match the file extension
+            test: /\.jsx$/,
 
+            // "include" is commonly used to match the directories
+            include: [
+                path.resolve(__dirname, "app/src"),
+                path.resolve(__dirname, "app/test")
+            ],
+
+            // "exclude" should be used to exclude exceptions
+            // try to prefer "include" when possible
+
+            // the "loader"
+            loader: "babel-loader"
+        },
+        {
+            test: /\.(png|jpg|gif|svg)$/,
+            loader: 'url',
+            query: {
+                limit: 10000,
+                name: '[name].[ext]?[hash]'
+            }
+        },
+        {
+            test:/\.scss$/,
+            loader:"style!css!scss"
+        }
+
+    ],
     externals: [
         //此处【add】会去获取在页面中,通过script标签加载的第三方库返回同名为 add 的全局变量
         "add",
