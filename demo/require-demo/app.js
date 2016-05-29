@@ -1,7 +1,9 @@
 
-let a=1;
+if (document.querySelectorAll('a').length) {
+    require('./modules/m.css')
+    require.ensure([],()=>{
+        var d=require('./modules/require.default').default;
+        d();
+    });
 
-var b=()=>{
-    console.log(a)
 }
-b()
