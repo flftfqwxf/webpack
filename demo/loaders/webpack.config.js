@@ -1,6 +1,4 @@
-console.log('cwd', process.cwd());
-var path = require('path');
-console.log('url>>>>>>',path.join(process.cwd(), "node_modules"))
+// var path = require('path');
 module.exports = {
     //此项设置【entry】参数内路径的位置,此值必须为【物理绝对路径】,默认值为:process.cwd(),当前WEBPACK命令运行的绝对路径
     // context: path.resolve(__dirname),//
