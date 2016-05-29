@@ -42,14 +42,24 @@ module.exports = {
             "del": "DEL",
             'jquery':'jQuery'
         },
+        {
+            a: false, // a is not external
+            b: true, // b is external (require("b"))
+            "./c": "c", // "./c" is external (require("c"))
+            "./d": "var d" // "./d" is external (d)
+        },
+        // Every non-relative module is external
+        // abc -> require("abc")
+        /^[a-z\-0-9]+$/,
+        function(context, request, callback) {
+            // Every module prefixed with "global-" becomes external
+            // "global-abc" -> abc
+            if(/^global-/.test(request))
+                return callback(null, "var " + request.substr(7));
+            callback();
+        },
+        "./e" // "./e" is external (require("./e"))
 
-        // {
-        //     "subtract": {
-        //         root: "subtract",
-        //         commonjs2: "./subtract",
-        //         commonjs: ["./math", "subtract"],
-        //         amd: "subtract"
-        //     }
-        // }
+
     ]
 }

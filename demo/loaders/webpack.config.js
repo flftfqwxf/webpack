@@ -22,9 +22,10 @@ module.exports = {
     },
 
     externals: [
-        //此处【add】会去获取在页面中,通过script标签加载的第三方库返回同名为 add 的全局变量
-        "add",
         {
+
+            //此处【add】会去获取在页面中,通过script标签加载的第三方库返回同名为 add 的全局变量
+            "add":true,
             //也可以手动去修改名字
             "del": "DEL",
             'jquery':'jQuery'
