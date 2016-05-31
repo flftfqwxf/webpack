@@ -55,6 +55,8 @@ module.exports = {
              *
              */
             names: ["common"],
+
+            
             /**
              *
              filename 是输出的文件名
