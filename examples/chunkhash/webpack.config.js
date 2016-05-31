@@ -1,5 +1,6 @@
 var path = require("path");
-var webpack = require("../../");
+//我将webpack装在了全局,所以这里引用完整路径
+var webpack = require("/usr/local/lib/node_modules/webpack");
 module.exports = {
 	entry: {
 		main: "./example",
