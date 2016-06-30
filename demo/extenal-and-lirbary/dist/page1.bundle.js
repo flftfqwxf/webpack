@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("add"), require("DEL"), require("jQuery"));
+		module.exports = factory(require("DEL"), require("add"), require("jQuery"));
 	else if(typeof define === 'function' && define.amd)
-		define(["add", "DEL", "jQuery"], factory);
+		define(["DEL", "add", "jQuery"], factory);
 	else if(typeof exports === 'object')
-		exports["myLibray"] = factory(require("add"), require("DEL"), require("jQuery"));
+		exports["myLibray"] = factory(require("DEL"), require("add"), require("jQuery"));
 	else
-		root["myLibray"] = factory(root["add"], root["DEL"], root["jQuery"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__) {
+		root["myLibray"] = factory(root["DEL"], root["add"], root["jQuery"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_2__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -21,16 +21,16 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
-/******/ 			exports: {},
-/******/ 			id: moduleId,
-/******/ 			loaded: false
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
 /******/ 		};
 
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 
 /******/ 		// Flag the module as loaded
-/******/ 		module.loaded = true;
+/******/ 		module.l = true;
 
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -47,28 +47,14 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	/**
-	 * Created by flftfqwxf on 16/5/27.
-	 */
-
-	var add = __webpack_require__(1);
-	//var subtract = require("subtract");
-	add();
-	var del = __webpack_require__(2);
-	del()
-	var jQuery = __webpack_require__(3)
-	module.exports = {
-	    add: add,
-	    del: del,
-	    jq: jQuery
-	}
+	module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ },
 /* 1 */
@@ -84,9 +70,23 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 3 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
+	/**
+	 * Created by flftfqwxf on 16/5/27.
+	 */
+
+	var add = __webpack_require__(1);
+	//var subtract = require("subtract");
+	add();
+	var del = __webpack_require__(0);
+	del()
+	var jQuery = __webpack_require__(2)
+	module.exports = {
+	    add: add,
+	    del: del,
+	    jq: jQuery
+	}
 
 /***/ }
 /******/ ])

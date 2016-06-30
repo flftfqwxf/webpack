@@ -6,7 +6,7 @@ module.exports = {
         //将包作为库导出//
         //说明,如果设置的此项,当你在页面中引用了导出的JS时,可以用【myLibray】名字还访问此库
         //这样做的目的,是如果你写的是一些公司组件,可以导出到全局上,以方便其他地方使用,
-        //比如,在此示例中的a.js定义的export,可以通过m【yLibray.add】来访问
+        //比如,在此示例中的a.js定义的export,可以通过【myLibray.add】来访问
         library:'myLibray',
 
         //说明:当你在页面中直接通过 <script src="mylibrary"></script>等引入第三库时,
